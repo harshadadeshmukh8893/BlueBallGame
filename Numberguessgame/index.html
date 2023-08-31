@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            background-image: url('gues.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+
+
+        }
+
+        .circle-button {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #3498db;
+            color: white;
+            font-size: 18px;
+            line-height: 50px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .circle-button.correct {
+            background-color: green;
+        }
+
+        .circle-button.higher {
+            background-color: red;
+        }
+
+        .circle-button.lower {
+            background-color: yellow;
+        }
+
+        .circle-button.guess {
+            background-color: #3498db;
+        }
+
+        #slider-container {
+            width: 50%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #slider {
+            flex: 1;
+        }
+
+        .instructions-box {
+            border: 2px solid #3498db;
+            padding: 10px;
+            margin: 5px auto;
+            /* Center the box horizontally */
+            max-width: 500px;
+            /* Set a maximum width for the box */
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Correctly placed styles for bullet points */
+        .instructions-box ul {
+            list-style-type: disc;
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        .instructions-box ul li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <table style="width: 100%;">
+        <tr>
+            <td colspan="1" style="text-align: center;">
+                <h2>Instructions</h2>
+                <!-- Add the class to the div wrapping the instructions -->
+                <div class="instructions-box">
+                    <p>Welcome to Number guessing game, please follow the instructions:</p>
+                    <ul>
+                        <li>Guess the number by moving the slider.</li>
+                        <li>Color changes to <span style="color: yellow;">Yellow</span> if the guessed number is
+                            smaller.</li>
+                        <li>Color changes to <span style="color: red;">Red</span> if the guessed number is larger.</li>
+                        <li>Color changes to <span style="color: green;">Green</span> if the guessed number is correct.
+                        </li>
+                        <li>Maximum Attempts allowed: 4.</li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <h1>Number Guessing Game</h1>
+    <p>Guess the number between 1 and 10:</p>
+    <div id="buttons">
+        <!-- Circular buttons for number selection -->
+        <button class="circle-button">1</button>
+        <button class="circle-button">2</button>
+        <button class="circle-button">3</button>
+        <button class="circle-button">4</button>
+        <button class="circle-button">5</button>
+        <button class="circle-button">6</button>
+        <button class="circle-button">7</button>
+        <button class="circle-button">8</button>
+        <button class="circle-button">9</button>
+        <button class="circle-button">10</button>
+    </div>
+    <div id="slider-container">
+        <input type="range" id="slider" min="1" max="10" step="1" value="5">
+    </div>
+    <p id="chances">Attempts left: 4</p>
+    <p id="result"></p>
+    <!-- <p id="chances">Attempts left: 4</p> -->
+    <p id="message"></p>
+    <button id="refresh">Refresh</button>
+    <script src="numguess.js">
+
+    </script>
+</body>
+
+</html>
